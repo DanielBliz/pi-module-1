@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 3</title>
+    <link
+      rel="stylesheet"
+      href="global.css"
+    />
+    <meta
+      name="description"
+      content="ПІ-320Б | Блізніченко Данило | 4 варіант"
+    />
+    <script defer>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          showAllHobbies(xhttp.responseXML);
+          showFirstUserMusic(xhttp.responseXML);
+        }
+      };
+      xhttp.open('GET', 'lab-3/users.xml', true);
+      xhttp.send();
+
+      function showAllHobbies(xml) {
+        let txt = '';
+        path = '/users/user/hobby';
+        if (xml.evaluate) {
+          const nodes = xml.evaluate(
+            path,
+            xml,
+            null,
+            XPathResult.ANY_TYPE,
+            null,
+          );
+          let result = nodes.iterateNext();
+          while (result) {
+            txt += `<p>${result.childNodes[0].nodeValue}</p>`;
+            result = nodes.iterateNext();
+          }
+        }
+        document.getElementById('hobbies').insertAdjacentHTML('beforeend', txt);
+      }
+
+      function showFirstUserMusic(xml) {
+        let txt = '';
+        path = '/users/user[1]/music';
+        if (xml.evaluate) {
+          const nodes = xml.evaluate(
+            path,
+            xml,
+            null,
+            XPathResult.ANY_TYPE,
+            null,
+          );
+          let result = nodes.iterateNext();
+          while (result) {
+            txt += `<p>${result.childNodes[0].nodeValue}</p>`;
+            result = nodes.iterateNext();
+          }
+        }
+        document.getElementById('music').insertAdjacentHTML('beforeend', txt);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="hobbies">
+      <h2>All users hobbies</h2>
+    </div>
+    <div id="music">
+      <h2>First user music preference</h2>
+    </div>
+    <p class="copy">&copy; Daniel Bliznichenko</p>
+  </body>
+</html>

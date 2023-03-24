@@ -1,0 +1,9 @@
+.table th,
+.table td {
+	padding: .25rem;
+}
+
+.map__img {
+	display: block;
+	margin-inline: auto;
+}

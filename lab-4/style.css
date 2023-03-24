@@ -1,0 +1,75 @@
+:root {
+	--clr-grey: #686868;
+	--clr-blue: #4b9fff;
+	--clr-blue-darker: #2b8af7;
+	--clr-blue-dark: #0077ff;
+
+	--border-radius-sm: .25rem;
+	--border-radius-md: .5rem;
+}
+
+*,
+*:is(::after, ::before) {
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-items: center;
+}
+
+form {
+	width: 100%;
+	max-width: 300px;
+	padding: .75rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	border: 2px solid var(--clr-blue-dark);
+	border-radius: var(--border-radius-md);
+
+	margin-block: 10px;
+}
+
+label {
+	display: block;
+	margin-bottom: .25rem;
+	color: var(--clr-grey);
+}
+
+input {
+	width: 100%;
+	border: 1px solid var(--clr-blue-dark);
+	border-radius: var(--border-radius-sm);
+	padding: .5rem;
+
+	outline-color: var(--clr-blue-dark);
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+button {
+	padding: .5rem .75rem;
+	background-color: var(--clr-blue);
+	color: white;
+	border: 2px solid var(--clr-blue-dark);
+	border-radius: var(--border-radius-md);
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--clr-blue-dark);
+}
+
+button:active {
+	background-color: var(--clr-blue-darker);
+}
+
+button:focus {
+	outline-color: var(--clr-blue-dark);
+	outline-offset: 5px;
+}
