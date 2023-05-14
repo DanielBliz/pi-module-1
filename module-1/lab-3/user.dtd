@@ -1,0 +1,9 @@
+<!DOCTYPE user [
+	<!ELEMENT first_name (#CDATA)>
+	<!ELEMENT surname (#CDATA)>
+	<!ELEMENT hobby (#CDATA)>
+	<!ELEMENT music (#CDATA)>
+	<!ELEMENT literature (#CDATA)>
+	<!ELEMENT movie (#CDATA)>
+	<!ELEMENT avatar EMPTY>
+]>
