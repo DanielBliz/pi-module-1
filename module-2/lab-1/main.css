@@ -1,0 +1,51 @@
+body {
+	background-color: aliceblue;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+}
+
+#keyboard {
+	text-align: center;
+	margin: auto;
+	border: 2px solid;
+}
+
+#keyboard input {
+	cursor: pointer;
+}
+
+#keyboard tr:nth-child(2n + 1) input {
+	background-color: #cfcfcf;
+	border: 1px outsetd gray;
+}
+
+#keyboard tr:nth-child(2n) input {
+	background-color: #c0c0c0;
+	border: 1px outsetd gray;
+}
+
+#keyboard tr input:hover {
+	background-color: #a5a5a5;
+}
+
+.options input {
+	cursor: pointer;
+}
+
+#award {
+	cursor: pointer;
+}
+
+.sign input {
+	padding: 6px 10px;
+	background-color: #ffbbbb;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.sign input:hover {
+	background-color: #fdacac;
+}
